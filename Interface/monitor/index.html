@@ -1,0 +1,651 @@
+<html>
+  <head>
+    <!-- CSS -->
+    <style>
+      
+            @import url('https://fonts.googleapis.com/css?family=Roboto:500,700|Source+Sans+Pro:300,400,700');
+          
+            .title-text1 {
+                color: #3D4C53;
+                font-size:47;
+                font-weight: lighter;
+                text-align : center;
+                font-family: 'Source Sans Pro', sans-serif;
+                margin: 15 auto;
+                margin-top: 70px;
+            }
+            
+            input { 
+              font-family: 'Source Sans Pro', sans-serif;
+              font-size: 12px;   
+              line-height: 1.4;  
+              color: #7f7f7f;    
+              background: white; 
+            }
+          
+            .text-page-up {
+              color: #3D4C53;
+              font-size:15;
+              font-weight: lighter;
+              font-family: 'Source Sans Pro', sans-serif;
+              text-align: center;
+              margin-top: 30;
+              margin-bottom: 0;            
+            }
+          
+            .text-page {
+                color: #3D4C53;
+                font-size:15;
+                font-weight: lighter;
+                text-align : center;
+                font-family: 'Source Sans Pro', sans-serif;
+                margin: 15 auto;
+            }
+      
+      		.text-page-bottom {
+                color: #ffffff;
+                font-size:20;
+                font-weight: lighter;
+                text-align : center;
+                font-family: 'Source Sans Pro', sans-serif;
+       		}
+            
+            #holder{
+              -moz-user-select: -moz-none;
+              -khtml-user-select: none; 
+              -webkit-user-select: none;
+              background: white;
+              padding: 10px;
+              width: 350px;
+              margin: 20 auto;
+              position: relative;
+                //top: 50%;
+                //transform: translateY(-65%);
+              box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
+              border-radius: 2px;
+              text-align: center;
+            }
+            
+            .inner-holder {
+              margin: 15 auto;
+            }
+            
+            .temp{
+              width: 70px;
+              height: 24px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #fffefc;
+              font-family: 'Source Sans Pro', sans-serif;
+              color : #3D4C53;
+              font-weight: lighter;
+              border-color: #69818c;
+            }
+
+            .temp:hover {
+              background-color: #3D4C53; /* Green */
+              color: white;
+              cursor: pointer;
+            }
+            
+            .humid{
+              width: 55px;
+              height: 24px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #fffefc;
+              font-family: 'Source Sans Pro', sans-serif;
+              color : #3D4C53;
+              font-weight: lighter;
+              border-color: #69818c;
+            }
+
+            .humid:hover {
+              background-color: #3D4C53; /* Green */
+              color: white;
+              cursor: pointer;
+            }
+			
+            .bright{
+              width: 62px;
+              height: 24px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #fffefc;
+              font-family: 'Source Sans Pro', sans-serif;
+              color : #3D4C53;
+              font-weight: lighter;
+              border-color: #69818c;
+            }
+
+            .bright:hover {
+              background-color: #3D4C53; /* Green */
+              color: white;
+              cursor: pointer;
+            }
+            
+            .rain{
+              width: 53px;
+              height: 33px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #fffefc;
+              font-family: 'Source Sans Pro', sans-serif;
+              color : #3D4C53;
+              font-weight: lighter;
+              border-color: #69818c;
+            }
+
+            .rain:hover {
+              background-color: #3D4C53; /* Green */
+              color: white;
+              cursor: pointer;
+            }
+            
+            .water{
+              width: 53px;
+              height: 33px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #fffefc;
+              font-family: 'Source Sans Pro', sans-serif;
+              color : #3D4C53;
+              font-weight: lighter;
+              border-color: #69818c;
+            }
+
+            .water:hover {
+              background-color: #3D4C53; /* Green */
+              color: white;
+              cursor: pointer;
+            }
+
+            .soil{
+              width: 53px;
+              height: 33px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #fffefc;
+              font-family: 'Source Sans Pro', sans-serif;
+              color : #3D4C53;
+              font-weight: lighter;
+              border-color: #69818c;
+            }
+
+            .soil:hover {
+              background-color: #3D4C53; /* Green */
+              color: white;
+              cursor: pointer;
+            }
+            
+            #bReset{
+              width: 120px;
+              height: 30px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #3D4C53;
+              border-color: #3D4C53;
+              font-family: 'Roboto', sans-serif;
+              color : white;
+              font-weight: lighter;
+              cursor: pointer;
+            }
+
+            #bReset:hover {
+              background-color: #fffefc; /* Green */
+              color: #3D4C53;
+              cursor: pointer;
+            }
+            
+    </style>
+
+    <title>Monitor - Greenhauz</title>
+        <link rel="icon" type="image/png" href="https://ibin.co/4aeRBQ8hb6aG.png">
+  </head>
+  <body>
+    
+      <!-- Links -->
+      <div class="text-page-up">
+            <a href="https://www.greenhauz.co/dashboard/" class="text-page" style="text-decoration:none">Dashboard</a>
+            <a class="text-page">|</a>
+            <a href="https://www.greenhauz.co/control/" class="text-page" style="text-decoration:none">Control</a>
+          <a class="text-page">|</a>
+          <a href="https://www.greenhauz.co/the-project/" class="text-page" style="text-decoration:none">The project</a>
+          <a class="text-page">|</a>
+          <a href="https://www.greenhauz.co/about/" class="text-page" style="text-decoration:none">About</a>
+     
+      </div>
+
+    
+    
+    <h1 class="title-text1">Sensor Data</h1>
+
+    <!-- Start-End Time Filter -->
+     <div id="holder">
+                      <div class="inner-holder">
+                          <a class="text-page">Fiter by Start - End Time</a>
+                      </div>
+
+                      <div class="inner-holder">
+                            <!-- Start Date and Time -->
+                            <input id="date_start" type="date"> <!-- Date input -->
+                            <input name="timeRange_start" type="time" id="timeInput_start" required/>  <!-- Time Range input -->
+
+                            <!-- End Date and Time -->
+                            <input id="date_end" type="date"> <!-- Date input -->
+                            <input name="timeRange_end" type="time" id="timeInput_end" required/>  <!-- Time Range input -->
+                       </div>
+
+
+                      <div class="inner-holder">
+                          <a class="text-page">Apply to</a>
+                      </div>
+
+
+                      <div class="inner-holder">
+                            <!-- Buttons -->
+                            <button id="11" class="temp">Temperature</button> 
+                            <button id="12" class="humid">Humidity</button> 
+                            <button id="13" class="bright">Brightness</button>
+                            <button id="14" class="rain">Rain Level</button>
+                            <button id="15" class="water">Water Level</button>
+                            <button id="16" class="soil">Soil Moisture</button>
+                        </div>
+
+                     <button id="bReset" value="Refresh Page" onClick="window.location.reload()" class="refresh">Reset</button>
+     </div>
+          
+
+          
+          
+      <!-- Charts -->
+      <div align="center"> 
+            <table>
+              <tr><td colspan="2">
+
+              </td></tr>
+              <tr><td>
+                <iframe id="up-left" width="450" height="260" style="border: 1px solid #ffffff;" src="https://api.thingspeak.com/channels/724593/charts/1?api_key=MZBWT0KJYH0L3IBL&title=Temperature&color=e21b1b&xaxis=Time&yaxis=Degrees%20Celsius&dynamic=true&update=3"></iframe>
+              </td>
+              <td>
+                <iframe id="up-right" width="450" height="260" style="border: 1px solid #ffffff;" src="https://api.thingspeak.com/channels/724593/charts/2?api_key=MZBWT0KJYH0L3IBL&title=Humidity&color=e21b1b&xaxis=Time&yaxis=Pct&dynamic=true&update=3"></iframe>
+              </td></tr>
+              <tr><td>
+                <iframe id="middle-left" width="450" height="260" style="border: 1px solid #ffffff;" src="https://api.thingspeak.com/channels/724593/charts/3?api_key=MZBWT0KJYH0L3IBL&title=Brightness&color=e21b1b&xaxis=Time&yaxis=Value&dynamic=true&update=3"></iframe>
+              </td>
+              <td>
+                <iframe id="middle-right" width="450" height="260" style="border: 1px solid #ffffff;" src="https://api.thingspeak.com/channels/724593/charts/4?api_key=MZBWT0KJYH0L3IBL&title=Rain%20Level&color=e21b1b&xaxis=Time&yaxis=Value&dynamic=true&update=3"></iframe>
+              </td></tr>
+              <tr><td>
+                <iframe id="down-left" width="450" height="260" style="border: 1px solid #ffffff;" src="https://api.thingspeak.com/channels/724593/charts/5?api_key=MZBWT0KJYH0L3IBL&title=Water%20Level&color=e21b1b&xaxis=Time&yaxis=Value&dynamic=true&update=3"></iframe>
+              </td>
+
+              <td>
+                <iframe id="down-right" width="450" height="260" style="border: 1px solid #ffffff;" src="https://api.thingspeak.com/channels/724593/charts/6?api_key=MZBWT0KJYH0L3IBL&title=Soil%20Moisture&color=e21b1b&xaxis=Time&yaxis=Value&dynamic=true&update=3"></iframe>
+              </td>
+            </table>
+
+      </div>
+    
+    
+   	  <!-- Leave some space at the bottom of the page -->
+      <div>
+        <a href="actuator_log.txt" class="text-page-bottom" download>This text has font-size 0 to leave space at the bottom.</a>
+      </div>
+      <div>
+        <a href="actuator_log.txt" class="text-page-bottom" download>This text has font-size 0 to leave space at the bottom.</a>
+      </div>
+
+
+	
+      
+      
+      
+
+      <script src="jquery.min.js"></script>
+      <script type="text/javascript">
+
+      $(document).ready(function(){
+        
+                document.getElementById("timeInput_start").defaultValue = "01:00";
+                document.getElementById("timeInput_end").defaultValue = "00:00";
+
+                var start_date;
+                var start_time;
+                var end_date;
+                var end_time;
+
+                // Temperature
+                $(".temp").click(function(){
+
+                    var chart = "1"; // Temperature chart id
+					var chart_title = "Temperature";
+                    
+                    start_date = document.getElementById("date_start").value;  
+                    start_time = document.getElementById("timeInput_start").value;
+                    end_date = document.getElementById("date_end").value;  
+                    end_time = document.getElementById("timeInput_end").value;  
+                    
+                    
+                    // Correct ThingSpeak time difference (+2 hours)
+                    var hours_start = start_time.split(":");
+                    var hours_end = end_time.split(":");
+          			
+                    console.log(parseInt(hours_start[0]));
+                    console.log(parseInt(hours_end[0]));
+                    
+                    if (hours_start[0] == 0){
+                    	hours_start[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_start[0] = (parseInt(hours_start[0]) - 2).toString(); 
+                    }
+                    
+                    
+                    if (hours_end[0] == 0){
+                    	hours_end[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_end[0] = (parseInt(hours_end[0]) - 2).toString(); 
+                    }
+                    
+                    
+                    if (hours_start[0] < 10) {hours_start[0] = "0" + hours_start[0];}
+                    if (hours_end[0] < 10) {hours_end[0] = "0" + hours_end[0];}
+                    
+                    start_time = hours_start.join(":");
+                    end_time = hours_end.join(":");
+          
+                    console.log(start_time);
+                    console.log(end_time);
+                    
+                    // Prepare GET Request
+                    start = "&start=" + start_date + "%20" + start_time + ":00";
+                    end = "&end=" + end_date + "%20" + end_time + ":00";
+
+                    get_request = "https://api.thingspeak.com/channels/724593/charts/" + chart + 
+                      "?api_key=MZBWT0KJYH0L3IBL&title=" + chart_title + "&color=f64bfc&xaxis=Time&yaxis=Degrees%20Celsius" + start + end;
+
+                    console.log(get_request);
+
+                    document.getElementById("up-left").src = get_request;
+
+
+
+                });
+
+
+                // Humidity
+                $(".humid").click(function(){
+
+                    var chart = "2"; // Humidity chart id
+					var chart_title = "Humidity";
+                    
+                    start_date = document.getElementById("date_start").value;  
+                    start_time = document.getElementById("timeInput_start").value;
+                    end_date = document.getElementById("date_end").value;  
+                    end_time = document.getElementById("timeInput_end").value;  
+                    
+                    // Correct ThingSpeak time difference (1 hour)
+                    var hours_start = start_time.split(":");
+                    var hours_end = end_time.split(":");
+          
+                    console.log(parseInt(hours_start[0]));
+                    console.log(parseInt(hours_end[0]));
+                    
+                    if (hours_start[0] == 0){
+                    	hours_start[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_start[0] = (parseInt(hours_start[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_end[0] == 0){
+                    	hours_end[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_end[0] = (parseInt(hours_end[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_start[0] < 10) {hours_start[0] = "0" + hours_start[0];}
+                    if (hours_end[0] < 10) {hours_end[0] = "0" + hours_end[0];}
+                    
+                    start_time = hours_start.join(":");
+                    end_time = hours_end.join(":");
+          
+                    console.log(start_time);
+                    console.log(end_time);
+                    
+                    // Prepare GET Request
+                    start = "&start=" + start_date + "%20" + start_time + ":00";
+                    end = "&end=" + end_date + "%20" + end_time + ":00";
+
+                    get_request = "https://api.thingspeak.com/channels/724593/charts/" + chart + 
+                      "?api_key=MZBWT0KJYH0L3IBL&title=" + chart_title + "&color=f64bfc&xaxis=Time&yaxis=Pct" + start + end;
+
+                    console.log(get_request);
+
+                    document.getElementById("up-right").src = get_request;
+
+
+
+                });
+                
+                // Brightness
+                $(".bright").click(function(){
+
+                    var chart = "3"; // Brightness chart id
+					var chart_title = "Brightness";
+                    
+                    start_date = document.getElementById("date_start").value;  
+                    start_time = document.getElementById("timeInput_start").value;
+                    end_date = document.getElementById("date_end").value;  
+                    end_time = document.getElementById("timeInput_end").value;  
+                    
+                    // Correct ThingSpeak time difference (1 hour)
+                    var hours_start = start_time.split(":");
+                    var hours_end = end_time.split(":");
+          
+                    console.log(parseInt(hours_start[0]));
+                    console.log(parseInt(hours_end[0]));
+                    
+                    if (hours_start[0] == 0){
+                    	hours_start[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_start[0] = (parseInt(hours_start[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_end[0] == 0){
+                    	hours_end[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_end[0] = (parseInt(hours_end[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_start[0] < 10) {hours_start[0] = "0" + hours_start[0];}
+                    if (hours_end[0] < 10) {hours_end[0] = "0" + hours_end[0];}
+                    
+                    start_time = hours_start.join(":");
+                    end_time = hours_end.join(":");
+          
+                    console.log(start_time);
+                    console.log(end_time);
+                    
+                    // Prepare GET Request
+                    start = "&start=" + start_date + "%20" + start_time + ":00";
+                    end = "&end=" + end_date + "%20" + end_time + ":00";
+
+                    get_request = "https://api.thingspeak.com/channels/724593/charts/" + chart + 
+                      "?api_key=MZBWT0KJYH0L3IBL&title=" + chart_title + "&color=f64bfc&xaxis=Time&yaxis=Value" + start + end;
+
+                    console.log(get_request);
+
+                    document.getElementById("middle-left").src = get_request;
+
+                });
+                
+                // Rain Level
+                $(".rain").click(function(){
+
+                    var chart = "4"; // Rain Level chart id
+         
+                    start_date = document.getElementById("date_start").value;  
+                    start_time = document.getElementById("timeInput_start").value;
+                    end_date = document.getElementById("date_end").value;  
+                    end_time = document.getElementById("timeInput_end").value;  
+                    
+                    // Correct ThingSpeak time difference (1 hour)
+                    var hours_start = start_time.split(":");
+                    var hours_end = end_time.split(":");
+          
+                    console.log(parseInt(hours_start[0]));
+                    console.log(parseInt(hours_end[0]));
+                    
+                    if (hours_start[0] == 0){
+                    	hours_start[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_start[0] = (parseInt(hours_start[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_end[0] == 0){
+                    	hours_end[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_end[0] = (parseInt(hours_end[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_start[0] < 10) {hours_start[0] = "0" + hours_start[0];}
+                    if (hours_end[0] < 10) {hours_end[0] = "0" + hours_end[0];}
+                    
+                    start_time = hours_start.join(":");
+                    end_time = hours_end.join(":");
+          
+                    console.log(start_time);
+                    console.log(end_time);
+                    
+                    // Prepare GET Request
+                    start = "&start=" + start_date + "%20" + start_time + ":00";
+                    end = "&end=" + end_date + "%20" + end_time + ":00";
+
+                    get_request = "https://api.thingspeak.com/channels/724593/charts/" + chart + 
+                      "?api_key=MZBWT0KJYH0L3IBL&title=Rain%20Level&color=f64bfc&xaxis=Time&yaxis=Value" + start + end;
+
+                    console.log(get_request);
+
+                    document.getElementById("middle-right").src = get_request;
+
+                });
+                
+                // Water Level
+                $(".water").click(function(){
+
+                    var chart = "5"; // Rain Level chart id
+         
+                    start_date = document.getElementById("date_start").value;  
+                    start_time = document.getElementById("timeInput_start").value;
+                    end_date = document.getElementById("date_end").value;  
+                    end_time = document.getElementById("timeInput_end").value;  
+                    
+                    // Correct ThingSpeak time difference (1 hour)
+                    var hours_start = start_time.split(":");
+                    var hours_end = end_time.split(":");
+          
+                    console.log(parseInt(hours_start[0]));
+                    console.log(parseInt(hours_end[0]));
+                    
+                    if (hours_start[0] == 0){
+                    	hours_start[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_start[0] = (parseInt(hours_start[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_end[0] == 0){
+                    	hours_end[0] = (23).toString();
+                    }
+                    else { 
+                    	hours_end[0] = (parseInt(hours_end[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_start[0] < 10) {hours_start[0] = "0" + hours_start[0];}
+                    if (hours_end[0] < 10) {hours_end[0] = "0" + hours_end[0];}
+                    
+                    start_time = hours_start.join(":");
+                    end_time = hours_end.join(":");
+          
+                    console.log(start_time);
+                    console.log(end_time);
+                    
+                    // Prepare GET Request
+                    start = "&start=" + start_date + "%20" + start_time + ":00";
+                    end = "&end=" + end_date + "%20" + end_time + ":00";
+
+                    get_request = "https://api.thingspeak.com/channels/724593/charts/" + chart + 
+                      "?api_key=MZBWT0KJYH0L3IBL&title=Water%20Level&color=f64bfc&xaxis=Time&yaxis=Value" + start + end;
+
+                    console.log(get_request);
+
+                    document.getElementById("down-left").src = get_request;
+
+                });
+
+
+                // Soil Moisture Level
+                $(".soil").click(function(){
+
+                    var chart = "6"; // Rain Level chart id
+         
+                    start_date = document.getElementById("date_start").value;  
+                    start_time = document.getElementById("timeInput_start").value;
+                    end_date = document.getElementById("date_end").value;  
+                    end_time = document.getElementById("timeInput_end").value;  
+                    
+                    // Correct ThingSpeak time difference (1 hour)
+                    var hours_start = start_time.split(":");
+                    var hours_end = end_time.split(":");
+          
+                    console.log(parseInt(hours_start[0]));
+                    console.log(parseInt(hours_end[0]));
+                    
+                    if (hours_start[0] == 0){
+                      hours_start[0] = (23).toString();
+                    }
+                    else { 
+                      hours_start[0] = (parseInt(hours_start[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_end[0] == 0){
+                      hours_end[0] = (23).toString();
+                    }
+                    else { 
+                      hours_end[0] = (parseInt(hours_end[0]) - 2).toString(); 
+                    }
+                    
+                    if (hours_start[0] < 10) {hours_start[0] = "0" + hours_start[0];}
+                    if (hours_end[0] < 10) {hours_end[0] = "0" + hours_end[0];}
+                    
+                    start_time = hours_start.join(":");
+                    end_time = hours_end.join(":");
+          
+                    console.log(start_time);
+                    console.log(end_time);
+                    
+                    // Prepare GET Request
+                    start = "&start=" + start_date + "%20" + start_time + ":00";
+                    end = "&end=" + end_date + "%20" + end_time + ":00";
+
+                    get_request = "https://api.thingspeak.com/channels/724593/charts/" + chart + 
+                      "?api_key=MZBWT0KJYH0L3IBL&title=Soil%20Moisture&color=f64bfc&xaxis=Time&yaxis=Value" + start + end;
+
+                    console.log(get_request);
+
+                    document.getElementById("down-right").src = get_request;
+
+                });
+
+      });
+
+      </script>
+</html> 

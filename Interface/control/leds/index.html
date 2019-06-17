@@ -1,0 +1,578 @@
+<html>
+  <head>
+      <style>
+
+        @import url('https://fonts.googleapis.com/css?family=Roboto:500,700|Source+Sans+Pro:300,400,700');
+
+        input {
+              font-family: 'Source Sans Pro', sans-serif;
+              line-height: 1.4;
+              color: #000000;
+              background: white;
+        }
+
+
+      .led{
+            width: 220px;
+            height: 40px;
+            font-size: 14px;
+            background: #3D4C53;
+            border-color: #3D4C53;
+            font-family: 'Roboto', sans-serif;
+            color : white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .led:hover {
+          background-color: #fffefc;
+          color: #3D4C53;
+          cursor: pointer;
+        }
+
+        .lastState{
+            width: 220px;
+            height: 40px;
+            font-size: 14px;
+            background: #ffffff;
+            border-color: #e2e2e2;
+            font-family: 'Source Sans Pro', sans-serif;
+            color : #e2e2e2;
+            font-weight: lighter;
+            cursor: pointer;
+        }
+
+        .lastState:hover {
+          background-color: #e2e2e2;
+          color: white;
+          cursor: pointer;
+        }
+
+        .bigger-button{
+          width: 220px;
+          height: 40px;
+          font-size: 14px;
+          background: #3D4C53;
+          border-color: #3D4C53;
+          font-family: 'Roboto', sans-serif;
+          color : white;
+          font-weight: bold;
+          margin:7px auto;
+          cursor: pointer;
+        }
+
+        .bigger-button:hover {
+          background-color: #fffefc; /* Green */
+          color: #3D4C53;
+          cursor: pointer;
+        }
+
+        .start-timer{
+          width: 120px;
+          height: 30px;
+          font-size: 11px;
+          margin:5px auto;
+          background: #3D4C53;
+          border-color: #3D4C53;
+          font-family: 'Roboto', sans-serif;
+          color : white;
+          font-weight: lighter;
+          cursor: pointer;
+        }
+
+        .start-timer:hover {
+          background-color: #fffefc; /* Green */
+          color: #3D4C53;
+          cursor: pointer;
+        }
+
+
+        #bReset{
+              width: 120px;
+              height: 30px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #3D4C53;
+              border-color: #3D4C53;
+              font-family: 'Roboto', sans-serif;
+              color : white;
+              font-weight: lighter;
+              cursor: pointer;
+        }
+
+        #bReset:hover {
+              background-color: #fffefc; /* Green */
+              color: #3D4C53;
+              cursor: pointer;
+        }
+
+        /* Pause, Resume, Restart and Cancel buttons */
+        .bPause{
+          width: 49px;
+          height: 24px;
+          font-size: 11px;
+          margin:5px auto;
+          background: #fffefc;
+          font-family: 'Source Sans Pro', sans-serif;
+          color : #3D4C53;
+          font-weight: lighter;
+          border-color: #69818c;
+        }
+
+        .bPause:hover {
+          background-color: #3D4C53; /* Green */
+          color: white;
+          cursor: pointer;
+        }
+
+
+        .bResume{
+          width: 53px;
+          height: 24px;
+          font-size: 11px;
+          margin:5px auto;
+          background: #fffefc;
+          font-family: 'Source Sans Pro', sans-serif;
+          color : #3D4C53;
+          font-weight: lighter;
+          border-color: #69818c;
+        }
+
+        .bResume:hover {
+          background-color: #3D4C53; /* Green */
+          color: white;
+          cursor: pointer;
+        }
+
+        .bRestart{
+          width: 53px;
+          height: 24px;
+          font-size: 11px;
+          margin:5px auto;
+          background: #fffefc;
+          font-family: 'Source Sans Pro', sans-serif;
+          color : #3D4C53;
+          font-weight: lighter;
+          border-color: #69818c;
+        }
+
+        .bRestart:hover {
+          background-color: #3D4C53; /* Green */
+          color: white;
+          cursor: pointer;
+        }
+
+        .bCancel{
+          width: 53px;
+          height: 24px;
+          font-size: 11px;
+          margin:5px auto;
+          background: #fffefc;
+          font-family: 'Source Sans Pro', sans-serif;
+          color : #3D4C53;
+          font-weight: lighter;
+          border-color: #69818c;
+        }
+
+        .bCancel:hover {
+          background-color: #3D4C53; /* Green */
+          color: white;
+          cursor: pointer;
+        }
+
+        #container{
+          text-align: center;
+          font: bold 12px/30px Arial, serif;
+        }
+
+        #myProgress {
+          width: 86%;
+          background-color: #ffffff;
+          margin:5px auto;
+        }
+
+        #myBar {
+          width: 0%;
+          height: 20px;
+          background-color: #406fce;
+          text-align: center;
+        }
+
+        .bar-text {
+          font-weight: lighter;
+          font-size: 11px;
+        }
+
+        #clock-img {
+            margin:10px auto;
+        }
+
+        .title-text1 {
+          color: #3D4C53;
+          font-size:47;
+          font-weight: lighter;
+          text-align : center;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 15 auto;
+          margin-top: 70px;
+        }
+
+        .act-text {
+          color: #3D4C53;
+          font-size:75;
+          font-weight: bold;
+          text-align : center;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 15 auto;
+          margin-top: 70px;
+        }
+
+        .title-text2 {
+          color: #3D4C53;
+          font-size:47;
+          font-weight: lighter;
+          text-align : center;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 15 auto;
+          margin-top: 55px;
+        }
+
+        .text-page-up {
+          color: #3D4C53;
+          font-size:15;
+          font-weight: lighter;
+          font-family: 'Source Sans Pro', sans-serif;
+          text-align: center;
+          margin-top: 30;
+          margin-bottom: 0;
+        }
+
+        .text-page {
+          color: #3D4C53;
+          font-size:15;
+          font-weight: lighter;
+          text-align : center;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 15 auto;
+        }
+
+        .text-page-state {
+          color: #3D4C53;
+          font-size:25;
+          font-weight: lighter;
+          text-align : center;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 15 auto;
+        }
+
+        .text-page-bottom {
+          color: #ffffff;
+          font-size:20;
+          font-weight: lighter;
+          text-align : center;
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .outer {
+          display: table;
+          /*position: absolute;*/
+          top: 100;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+        }
+
+        .inner-timer {
+          margin: 18 auto;
+        }
+
+        .inner-holder {
+          margin: 18 auto;
+        }
+
+
+        /* Display current state*/
+        #holder{
+          -moz-user-select: -moz-none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+          background: white;
+          padding: 10px;
+          width: 250px;
+          margin: 0 auto;
+          position: relative;
+            //top: 50%;
+            //transform: translateY(-65%);
+          box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
+          border-radius: 2px;
+        }
+
+        input[type=submit] {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+
+
+        }
+
+        input[type=number], select {
+          width: 32%;
+          padding: 10px 20px;
+          margin: 8px 0;
+          /*display: inline-block;*/
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-right:5;
+
+        }
+
+        .refresh {
+          width: 100px;
+          height: 40px;
+          font-size: 14px;
+          background: #3D4C53;
+          border-color: #3D4C53;
+          font-family: 'Roboto', sans-serif;
+          color : white;
+          font-weight: bold;
+          margin: 50;
+        }
+
+        .refresh:hover {
+          background-color: #fffefc; /* Green */
+          color: #3D4C53;
+          cursor: pointer;
+        }
+
+        #clearLocal {
+          width: 200px;
+          height: 35px;
+          font-size: 13px;
+          background: #ffffff;
+          border-color: #e2e2e2;
+          font-family: 'Roboto', sans-serif;
+          color : #e2e2e2;
+          margin: 10;
+          font-weight: lighter;
+        }
+
+        #clearLocal:hover {
+          background-color: #e2e2e2;
+          color: #ffffff;
+          cursor: pointer;
+        }
+
+
+    #bApply{
+              width: 120px;
+              height: 30px;
+              font-size: 11px;
+              margin:5px auto;
+              background: #3D4C53;
+              border-color: #3D4C53;
+              font-family: 'Roboto', sans-serif;
+              color : white;
+              font-weight: lighter;
+              cursor: pointer;
+        }
+
+        #bApply:hover {
+              background-color: #fffefc; /* Green */
+              color: #3D4C53;
+              cursor: pointer;
+        }
+
+
+
+      </style>
+
+      <title>Control - Greenhauz</title>
+      <link rel="icon" type="image/png" href="https://ibin.co/4aeRBQ8hb6aG.png"> <!-- Favicon -->
+      <meta charset="UTF-8">
+    </head>
+  <body>
+
+
+     <!-- BLOCK -->
+      <div class="text-page-up">
+            <a href="https://www.greenhauz.co/dashboard/" class="text-page" style="text-decoration:none">Dashboard</a>
+            <a class="text-page">|</a>
+            <a href="https://www.greenhauz.co/monitor/" class="text-page" style="text-decoration:none">Monitor</a>
+          <a class="text-page">|</a>
+          <a href="https://www.greenhauz.co/control/" class="text-page" style="text-decoration:none">Control</a>
+          <a class="text-page">|</a>
+          <a href="https://www.greenhauz.co/the-project/" class="text-page" style="text-decoration:none">The Project</a>
+          <a class="text-page">|</a>
+          <a href="https://www.greenhauz.co/about/" class="text-page" style="text-decoration:none">About</a>
+
+      </div>
+
+
+
+
+      <!-- BLOCK -->
+      <div>
+
+
+             <!-- Switch button -->
+
+                <div class="outer">
+                    <h1 class="act-text">☀️</h1>
+                    <img src="https://i.imgur.com/sNJVdRi.png" alt="line" class="center" width="80">
+                    <h1 class="title-text1">Switch</h1>
+                  <!-- in the <button> tags below the ID attribute is the value sent to the arduino -->
+                  <button id="watering" class="led">ON / OFF</button>  <!-- button for pin 11 -->
+                <div>
+
+
+
+             <!-- Last state display -->
+
+              <h5 id="ledState1_current" class="text-page">Last state</h5>
+              <div>
+                <div id="holder">
+                  <h4 id="ledState1_prev" class="text-page-state"> </h4>
+                  <h4 id="ledState1" class="text-page-state"> </h4>
+                </div>
+              </div>
+
+
+              <!-- Retrieve Last ThingSpeak State button -->
+           <div class="inner-timer">
+              <button id="thingSpeakButton" class="lastState" onclick="retrieveData()">Retrieve last ThingSpeak state</button>
+           </div>
+
+
+
+
+
+
+
+              <!-- Timer -->
+
+            <div>
+                    <!--<meta http-equiv="refresh" content="3" /> <!-- Refresh page every 3 seconds: -->
+                    <h1 class="title-text2">Set Timer</h1>
+                    <div id="holder">
+
+
+                      <!-- Toggle actuator for a certain amount of time -->
+                      <div class="inner-timer">
+                          <input name="setTimer" type="number" maxlength="512" id="timerAct_1" class="timerField" min="0" placeholder="Time" required/>  <!-- Time input -->
+
+                          <select id="unitAct_1">
+                              <option value="seconds">second(s)</option>
+                              <option value="minutes">minute(s)</option>
+                              <option value="hours">hours(s)</option>
+                          </select>
+
+                      </div>
+
+
+
+                      <div class="inner-timer">
+                          <button id="led1_timer" class="start-timer">START</button>
+
+                          <div>
+                              <button id="timerPauseId" class="bPause">Pause</button>
+                              <button id="timerResumeId" class="bResume">Resume</button>
+                              <button id="timerRestartId" class="bRestart">Restart</button>
+                              <button id="timerCancelId" class="bCancel">Cancel</button>
+                          </div>
+                      </div>
+
+
+                      <!-- Timer progress bar -->
+                      <div class="inner-timer">
+                            <div id="timerProgress" class="text-page"> </div>
+                            <div id="myProgress">
+                              <div id="myBar"></div>
+                            </div>
+                      </div>
+
+                  </div>
+                  <button id="clearLocal" onclick="clearStorage()">Clear previous processes</button>
+                <div>
+
+                  </div>
+              </div>
+
+
+
+            <!-- History Chart -->
+
+            <div>
+                  <h1 class="title-text2">History</h1>
+                  <!-- ThingSpeak Actuator History chart -->
+                      <iframe id="actChart_id" width="450" height="260" style="border: 1px solid #ffffff;" src="https://api.thingspeak.com/channels/745199/charts/3?api_key=ULZDAIJ4V116DC9L&title=LED%20Lamps&color=e21b1b&step=true&xaxis=Time&yaxis=State&dynamic=true&update=3"></iframe>
+
+
+
+                 <!-- Start-End Time Filter -->
+                 <div class="inner-holder">
+                         <div id="holder">
+                                          <div class="inner-holder">
+                                              <a class="text-page">Fiter by Start - End Time</a>
+                                          </div>
+
+                                          <div class="inner-holder">
+                                                <!-- Start Date and Time -->
+                                                <input id="date_start" type="date"> <!-- Date input -->
+                                                <input name="timeRange_start" type="time" id="timeInput_start" required/>  <!-- Time Range input -->
+
+                                                <!-- End Date and Time -->
+                                                <input id="date_end" type="date"> <!-- Date input -->
+                                                <input name="timeRange_end" type="time" id="timeInput_end" required/>  <!-- Time Range input -->
+                                           </div>
+
+                                         <button id="bApply" class="actChart">Apply</button>
+                         </div>
+                   </div>
+
+
+                 <!-- Reset button -->
+                 <div class="inner-holder">
+                     <button class="lastState" onClick="window.location.reload()">Reset</button>
+                 </div>
+
+          </div>
+
+
+               <!-- Actuator Log -->
+
+               <div>
+                      <h2 class="title-text2">Actuator Log</h2>
+                      <button class="bigger-button" onclick=" window.open('./actuator_log.txt','_blank')">VIEW</button>
+                  <div>
+                            <a href="actuator_log.txt" class="text-page" style="text-decoration:none" download>Download .txt</a>
+                          <a class="text-page">|</a>
+                            <a href="actuator_log.json" class="text-page" style="text-decoration:none" download>Download .JSON</a>
+                  </div>
+
+                   <!-- Leave some space at the bottom of the page -->
+                  <div>
+                         <a href="actuator_log.txt" class="text-page-bottom" download>This text has font-size 0 to leave space at the bottom.</a>
+                  </div>
+               </div>
+
+
+
+
+
+
+      </div>
+
+
+
+  <script src="jquery.min.js"></script>
+  <script type="text/javascript" src="leds.js"></script>
+
+  </body>
+</html>
