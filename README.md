@@ -1,8 +1,8 @@
 # Greenhauz.co
-IoT system that enables remote control and monitoring of an greenhouse through a web interface (bachelor thesis).
+Greenhauz.co is an IoT project that enables remote control and monitoring of an greenhouse through a web interface. Antonio Samaniego's bachelor thesis.
 
-- Full report: 
-- Demo: 
+- **Full report:** https://drive.google.com/file/d/10bKo2mgvkhVDRypUCTkyzmdfTA3JmxfH/view 
+- **Demo:** https://youtu.be/NpYbE0V0nB0
 
 The repo includes Arduino code for client/server and source code of the web interface.
 
